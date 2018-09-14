@@ -1,6 +1,7 @@
 package algorithms.sorting;
 
-import static algorithms.sorting.SortUtils.print;
+import static algorithms.sorting.Assert.assertEquals;
+import static algorithms.sorting.SortUtils.*;
 
 public class SelectionSort {
 
@@ -19,16 +20,14 @@ public class SelectionSort {
         }
     }
 
-    private static <T extends Comparable<? super T>> void swap(T[] array, int idx, int idy) {
-        T buffer = array[idx];
-        array[idx] = array[idy];
-        array[idy] = buffer;
-    }
 
     public static void main(String[] args) {
-        Integer[] array = new Integer[]{5, 4, 3, 2, 1, 0};
+        Integer[] array = {5, 4, 3, 2, 1, 0};
+        Integer[] copy = copy(array);
 
         sort(array);
         print(array);
+
+        assertEquals(array, referenceSort(copy));
     }
 }
