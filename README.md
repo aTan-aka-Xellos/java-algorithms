@@ -2,7 +2,7 @@
 
 Inspired by:  
 https://algs4.cs.princeton.edu  
-https://github.com/trekhleb/javascript-algorithms
+https://github.com/trekhleb/javascript-algorithms  
 https://github.com/TheAlgorithms/Java
 
 ## Algorithms
@@ -12,4 +12,8 @@ https://github.com/TheAlgorithms/Java
 * **Sorting**
 
   * [Selection Sort](src/algorithms/sorting/SelectionSort.java)
+  * [Insertion Sort] TODO
 
+## Data Structures
+
+TODO
