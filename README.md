@@ -14,6 +14,9 @@ https://github.com/TheAlgorithms/Java
   * [Selection Sort](src/algorithms/sorting/SelectionSort.java)
   * [Insertion Sort] TODO
 
+* **Number theory**
+  * [Prime numbers - trial division](src/algorithms/numbers/PrimesTrialDivision.java)
+
 ## Data Structures
 
 TODO
