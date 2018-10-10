@@ -14,8 +14,9 @@ https://github.com/TheAlgorithms/Java
   * [Selection Sort](src/algorithms/sorting/SelectionSort.java)
   * [Insertion Sort] TODO
 
-* **Number theory**
-  * [Prime numbers - trial division](src/algorithms/numbers/PrimesTrialDivision.java)
+* **Math**
+  * [Primality Test](src/algorithms/numbers/PrimesTrialDivision.java) - trial division method
+  * [Euclidean Algorithm](src/algorithms/numbers/GreatestCommonDivisor.java) - calculate the Greatest Common Divisor (GCD)
 
 ## Data Structures
 
