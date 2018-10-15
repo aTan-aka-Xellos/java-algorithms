@@ -16,25 +16,34 @@ public class SieveOfEratosthenes {
         if (n < 2) return new int[] {};
 
         boolean[] sieved = new boolean[n + 1];
-        int limit = (int) Math.sqrt(n);
 
-        for (int i = 3; i <= limit; i += 2) {
+        for (int i = 3; i * i <= n; i += 2) {
             if (!sieved[i]) {
-                int maxToCheck = n / i;
-                for (int j = i; j <= maxToCheck; j++) {
+                int limit = n / i;
+                for (int j = i; j <= limit; j++) {
                     sieved[i * j] = true;
                 }
             }
         }
 
-        int[] primes = new int[n];
+        int[] primes = new int[countPrimesUpperBound(n)];
         int count = 1;
         primes[0] = 2;
+
         for (int i = 3; i < sieved.length; i += 2) {
             if (!sieved[i]) primes[count++] = i;
         }
 
         return Arrays.copyOf(primes, count);
+    }
+
+    /**
+     * Calculate primes upper bound - http://mathworld.wolfram.com/PrimeCountingFunction.html
+     * @param max number to search for primes
+     * @return upper bound for primes
+     */
+    private static int countPrimesUpperBound(int max) {
+        return max > 1 ? (int)(1.25506 * max / Math.log(max)) : 0;
     }
 
     /**
