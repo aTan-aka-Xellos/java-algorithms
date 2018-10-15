@@ -12,21 +12,21 @@ import java.util.Arrays;
  */
 public class SieveOfEratosthenes {
 
-    public static int[] getPrimes(int n) {
-        if (n < 2) return new int[] {};
+    public static int[] getPrimes(int maxNumber) {
+        if (maxNumber < 2) return new int[] {};
 
-        boolean[] sieved = new boolean[n + 1];
+        boolean[] sieved = new boolean[maxNumber + 1];
 
-        for (int i = 3; i * i <= n; i += 2) {
+        for (int i = 3; i * i <= maxNumber; i += 2) {
             if (!sieved[i]) {
-                int limit = n / i;
-                for (int j = i; j <= limit; j++) {
-                    sieved[i * j] = true;
+                int limit = maxNumber / i;
+                for (int multiplier = i; multiplier <= limit; multiplier++) {
+                    sieved[i * multiplier] = true;
                 }
             }
         }
 
-        int[] primes = new int[countPrimesUpperBound(n)];
+        int[] primes = new int[countPrimesUpperBound(maxNumber)];
         int count = 1;
         primes[0] = 2;
 
