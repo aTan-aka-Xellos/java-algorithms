@@ -1,6 +1,7 @@
 package algorithms.numbers;
 
-import static algorithms.numbers.Assert.assertTrue;
+import static algorithms.Assert.assertEquals;
+import static algorithms.Assert.assertTrue;
 
 import java.math.BigInteger;
 import java.util.Arrays;
@@ -49,6 +50,12 @@ public class SieveOfEratosthenes {
                 assertTrue(BigInteger.valueOf(prime).isProbablePrime(1), prime + " is not prime");
             }
         }
+
+        assertEquals(getPrimes(0),  new int[]{});
+        assertEquals(getPrimes(1),  new int[]{});
+        assertEquals(getPrimes(2),  new int[]{2});
+        assertEquals(getPrimes(10), new int[]{2, 3, 5, 7});
+        assertEquals(getPrimes(13), new int[]{2, 3, 5, 7, 11, 13});
     }
 }
 

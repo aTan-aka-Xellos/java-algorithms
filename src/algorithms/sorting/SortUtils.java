@@ -9,7 +9,7 @@ import java.util.StringJoiner;
  * @author aTan-aka-Xellos (https://github.com/aTan-aka-Xellos)
  *
  */
-final class SortUtils {
+public final class SortUtils {
 
     private SortUtils() {}
 
@@ -20,7 +20,7 @@ final class SortUtils {
      * @param idy index of the second element
      *
      */
-    static <T> void swap(T[] a, int idx, int idy) {
+    public static <T> void swap(T[] a, int idx, int idy) {
         T buffer = a[idx];
         a[idx] = a[idy];
         a[idy] = buffer;
@@ -31,8 +31,8 @@ final class SortUtils {
      * @param a array to print
      *
      */
-    static <T> void print(T[] a) {
-        System.out.println(toString(a));
+    public static <T> void print(T[] a) {
+        System.out.println(Arrays.toString(a));
     }
 
     /**
@@ -41,7 +41,7 @@ final class SortUtils {
      * @return string representation of the given array
      *
      */
-    static <T> String toString(T[] a) {
+    public static <T> String toString(T[] a) {
         StringJoiner joiner = new StringJoiner("\u0020");
 
         Arrays.stream(a)
@@ -57,7 +57,7 @@ final class SortUtils {
      * @return copy of the given array
      *
      */
-    static <T> T[] copy(T[] a) {
+    public static <T> T[] copy(T[] a) {
         return Arrays.copyOf(a, a.length);
     }
 
@@ -67,7 +67,7 @@ final class SortUtils {
      * @return sorted array
      *
      */
-    static <T> T[] referenceSort(T[] a) {
+    public static <T> T[] referenceSort(T[] a) {
         Arrays.sort(a);
         return a;
     }

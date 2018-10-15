@@ -1,6 +1,6 @@
 package algorithms.sorting;
 
-import static algorithms.sorting.Assert.assertEquals;
+import static algorithms.Assert.assertEquals;
 import static algorithms.sorting.SortUtils.*;
 
 public class SelectionSort {

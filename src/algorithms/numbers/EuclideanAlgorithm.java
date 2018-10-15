@@ -1,6 +1,6 @@
 package algorithms.numbers;
 
-import static algorithms.numbers.Assert.assertEquals;
+import static algorithms.Assert.assertEquals;
 
 /**
  * https://en.wikipedia.org/wiki/Greatest_common_divisor
