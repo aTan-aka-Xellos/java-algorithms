@@ -17,9 +17,9 @@ public class Assert {
         }
     }
 
-    static void assertTrue(boolean expression) {
-        if (!expression) {
-            throw new AssertionError("\nStatement is not true!");
+    static void assertTrue(boolean statement, String message) {
+        if (!statement) {
+            throw new AssertionError("\nStatement is not true: " + message);
         }
     }
 

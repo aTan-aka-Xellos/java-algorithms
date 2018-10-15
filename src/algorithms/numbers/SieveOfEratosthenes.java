@@ -14,12 +14,12 @@ public class SieveOfEratosthenes {
     public static int[] getPrimes(int n) {
         if (n < 2) return new int[] {};
 
-        boolean[] sieved = new boolean[n];
+        boolean[] sieved = new boolean[n + 1];
         int limit = (int) Math.sqrt(n);
 
-        for (int i = 3; i < limit; i += 2) {
+        for (int i = 3; i <= limit; i += 2) {
             if (!sieved[i]) {
-                for (int j = i; i * j < n; j++) {
+                for (int j = i; i * j <= n; j++) {
                     sieved[i * j] = true;
                 }
             }
@@ -37,16 +37,15 @@ public class SieveOfEratosthenes {
 
     /**
      * Test using BigInteger.isProbablePrime(1) as reference method to check is number is prime.
-     * @param args
      */
     public static void main(String[] args) {
 
-        // Arrays.stream(primes).forEach(System.out::println);
+//        Arrays.stream(getPrimes(13)).forEach(System.out::println);
 
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < 1000; i++) {
             int[] primes = getPrimes(i);
             for (int prime : primes) {
-                assertTrue(BigInteger.valueOf(prime).isProbablePrime(1));
+                assertTrue(BigInteger.valueOf(prime).isProbablePrime(1), prime + " is not prime");
             }
         }
     }
