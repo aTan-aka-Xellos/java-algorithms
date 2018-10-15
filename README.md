@@ -16,7 +16,8 @@ https://github.com/TheAlgorithms/Java
 
 * **Math**
   * [Primality Test](src/algorithms/numbers/PrimesTrialDivision.java) - trial division method
-  * [Euclidean Algorithm](src/algorithms/numbers/GreatestCommonDivisor.java) - calculate the Greatest Common Divisor (GCD)
+  * [Sieve Of Eratosthenes](src/algorithms/numbers/SieveOfEratosthenes.java) - sieve of Eratosthenes
+  * [Euclidean Algorithm](src/algorithms/numbers/EuclideanAlgorithm.java) - calculate the Greatest Common Divisor (GCD)
 
 ## Data Structures
 

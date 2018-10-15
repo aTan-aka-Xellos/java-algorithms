@@ -15,8 +15,9 @@ public class SieveOfEratosthenes {
         if (n < 2) return new int[] {};
 
         boolean[] sieved = new boolean[n];
+        int limit = (int) Math.sqrt(n);
 
-        for (int i = 3; i < Math.sqrt(n); i += 2) {
+        for (int i = 3; i < limit; i += 2) {
             if (!sieved[i]) {
                 for (int j = i; i * j < n; j++) {
                     sieved[i * j] = true;
