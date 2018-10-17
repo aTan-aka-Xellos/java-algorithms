@@ -1,6 +1,7 @@
 package algorithms.numbers;
 
 import static algorithms.Assert.assertEquals;
+import static java.lang.Math.abs;
 
 /**
  * https://en.wikipedia.org/wiki/Greatest_common_divisor
@@ -9,29 +10,32 @@ import static algorithms.Assert.assertEquals;
 public class EuclideanAlgorithm {
 
     /**
-     * The greatest common divisor  of two nonzero numbers a and b
+     * The greatest common divisor  of two nonzero numbers a and b.
+     * But it is convenient to set gcd(0, 0) = 0 (c) Wiki
      * @return greatest common divisor
      */
-    public static long GCD(long a, long b) {
-        if (a == 0 && b == 0) throw new IllegalArgumentException("One of the arguments should be nonzero");
+    public static long gcd(long a, long b) {
+        a = abs(a);
+        b = abs(b);
 
-        a = Math.abs(a);
-        b = Math.abs(b);
-
-        return b == 0 ? a : GCD(b, a % b);
+        return b == 0 ? a : gcd(b, a % b);
     }
 
     public static void main(String[] args) {
 
-        assertEquals(GCD(1, 0), 1);
-        assertEquals(GCD(1, 1), 1);
-        assertEquals(GCD(3, 27), 3);
-        assertEquals(GCD(13, 100), 1);
-        assertEquals(GCD(89, 144), 1);
-        assertEquals(GCD(77, 999), 1);
-        assertEquals(GCD(10, 100), 10);
-        assertEquals(GCD(10, -100), 10);
-        assertEquals(GCD(-10, -100), 10);
-        assertEquals(GCD(-462, 1071), 21);
+        assertEquals(gcd(0, 0), 0); // exceptional case
+        assertEquals(gcd(1, 0), 1);
+        assertEquals(gcd(8, 0), 8);
+        assertEquals(gcd(1, 1), 1);
+        assertEquals(gcd(3, 27), 3);
+        assertEquals(gcd(13, 100), 1);
+        assertEquals(gcd(89, 144), 1);
+        assertEquals(gcd(77, 999), 1);
+        assertEquals(gcd(10, 100), 10);
+        assertEquals(gcd(10, -100), 10);
+        assertEquals(gcd(0, -117), 117);
+        assertEquals(gcd(-177, 0), 177);
+        assertEquals(gcd(-10, -100), 10);
+        assertEquals(gcd(-462, 1071), 21);
     }
 }

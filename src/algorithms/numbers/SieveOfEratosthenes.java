@@ -51,8 +51,6 @@ public class SieveOfEratosthenes {
      */
     public static void main(String[] args) {
 
-//        Arrays.stream(getPrimes(13)).forEach(System.out::println);
-
         for (int i = 0; i < 100; i++) {
             int[] primes = getPrimes(i);
             for (int prime : primes) {
@@ -65,6 +63,10 @@ public class SieveOfEratosthenes {
         assertEquals(getPrimes(2),  new int[]{2});
         assertEquals(getPrimes(10), new int[]{2, 3, 5, 7});
         assertEquals(getPrimes(13), new int[]{2, 3, 5, 7, 11, 13});
+
+        // 7919 is the 1000-th prime number
+        assertEquals(getPrimes(7919).length,  1000);
+        assertEquals(getPrimes(7920).length,  1000);
     }
 }
 
