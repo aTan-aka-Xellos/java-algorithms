@@ -27,6 +27,12 @@ public class Assert {
         }
     }
 
+    public static void assertFalse(boolean statement, String message) {
+        if (statement) {
+            throw new AssertionError("\nStatement is not false: " + message);
+        }
+    }
+
     public static void assertEquals(int[] actual, int[] expected) {
         if (actual.length != expected.length) throw new AssertionError("Arrays length doesn't match");
 

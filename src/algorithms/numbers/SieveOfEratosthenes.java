@@ -58,6 +58,9 @@ public class SieveOfEratosthenes {
             }
         }
 
+        assertEquals(getPrimes(-10),  new int[]{});
+        assertEquals(getPrimes(-3),   new int[]{});
+
         assertEquals(getPrimes(0),  new int[]{});
         assertEquals(getPrimes(1),  new int[]{});
         assertEquals(getPrimes(2),  new int[]{2});
