@@ -20,12 +20,11 @@ public class BinaryEuclideanAlgorithm {
      * @return greatest common divisor
      */
     public static long gcd(long a, long b) {
-
         a = abs(a);
         b = abs(b);
 
         if (a == 0) return b;
-        if (b == 0 || a == b) return a;
+        if (b == 0) return a;
 
         if ((a & 1) == 0) {                // if a even:
             return ((b & 1) == 0)
@@ -37,6 +36,22 @@ public class BinaryEuclideanAlgorithm {
                 : gcd(b, abs(a - b));      // if b odd:  gcd(a, b) = gcd(b, |a - b|)
     }
 
+    /**
+     * More traditional way of writing operations.
+     */
+    public static long $gcd(long a, long b) {
+        a = abs(a);
+        b = abs(b);
+
+        if (a == 0) return b;
+        if (b == 0) return a;
+
+        if ((a % 2 == 0) && (b % 2 == 0)) return 2 * $gcd(a / 2, b / 2);
+        if ((a % 2 == 0) && (b % 2 != 0)) return $gcd(a / 2, b);
+        if ((a % 2 != 0) && (b % 2 == 0)) return $gcd(a, b / 2);
+        return $gcd(b, abs(a - b));
+    }
+
     public static void main(String[] args) {
 
         assertEquals(gcd(0, 0), 0); // exceptional case
@@ -44,6 +59,7 @@ public class BinaryEuclideanAlgorithm {
         assertEquals(gcd(8, 0), 8);
         assertEquals(gcd(1, 1), 1);
         assertEquals(gcd(3, 27), 3);
+        assertEquals(gcd(10, 1), 1);
         assertEquals(gcd(11, 100), 1);
         assertEquals(gcd(89, 144), 1);
         assertEquals(gcd(77, 999), 1);
@@ -54,5 +70,31 @@ public class BinaryEuclideanAlgorithm {
         assertEquals(gcd(-177, 0), 177);
         assertEquals(gcd(-10, -100), 10);
         assertEquals(gcd(-462, 1071), 21);
+
+        assertEquals(gcd(100_000_000, 1), 1);
+        assertEquals(gcd(100_000_000, 0), 100_000_000);
+        assertEquals(gcd(100_000_000, 100_000_000), 100_000_000);
+
+
+        assertEquals($gcd(0, 0), 0); // exceptional case
+        assertEquals($gcd(1, 0), 1);
+        assertEquals($gcd(8, 0), 8);
+        assertEquals($gcd(1, 1), 1);
+        assertEquals($gcd(3, 27), 3);
+        assertEquals($gcd(10, 1), 1);
+        assertEquals($gcd(11, 100), 1);
+        assertEquals($gcd(89, 144), 1);
+        assertEquals($gcd(77, 999), 1);
+        assertEquals($gcd(10, 100), 10);
+        assertEquals($gcd(10, -100), 10);
+        assertEquals($gcd(-10, 100), 10);
+        assertEquals($gcd(0, -117), 117);
+        assertEquals($gcd(-177, 0), 177);
+        assertEquals($gcd(-10, -100), 10);
+        assertEquals($gcd(-462, 1071), 21);
+
+        assertEquals($gcd(100_000_000, 1), 1);
+        assertEquals($gcd(100_000_000, 0), 100_000_000);
+        assertEquals($gcd(100_000_000, 100_000_000), 100_000_000);
     }
 }
