@@ -32,7 +32,7 @@ Binary counting follow the same procedure as decimal, after digit reaches 1 in b
 an increment resets it to 0 and causes an increment of the next digit to the left:  
 ![alt text][binary-counter-image] 
  
-**Representing**  
+**Representing negative values**  
 **Calculations**  
 Addition:  
 0 + 0 → 0  
@@ -47,11 +47,11 @@ Subtraction:
 1 − 1 → 0  
 
 Multiplication:  
-&nbsp;&nbsp;&nbsp;              1 0 1 (A)  
+&nbsp;&nbsp;&nbsp;&nbsp;        1 0 1 (A)  
 &nbsp;                        × 0 1 1 (B)  
 &nbsp;&nbsp;&nbsp;&nbsp;        -------  
 &nbsp;&nbsp;&nbsp;&nbsp;        1 0 1  
-&nbsp;&nbsp;                  1 0 1  
+&nbsp;                  1 0 1  
                             0 0 0  
                             -----------  
                             0 1 1 1 1
