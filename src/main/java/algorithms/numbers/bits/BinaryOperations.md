@@ -4,29 +4,29 @@ Binary numeral system use only 1 and 0 to represent a number. Each digit is refe
 Binary counting follow the same procedure as decimal, after digit reaches 1 in binary, 
 an increment resets it to 0 and causes an increment of the next digit to the left:  
 
-![binary_counter](./resources/img/numbers/binary_counter.gif)   
+![binary_counter](https://github.com/aTan-aka-Xellos/java-algorithms/blob/master/src/main/resources/img/numbers/binary_counter.gif)   
 
 
 #### Calculations
 **Addition:**  
-![addition](./resources/img/numbers/addition.png)  
+![addition](https://github.com/aTan-aka-Xellos/java-algorithms/blob/master/src/main/resources/img/numbers/addition.png)  
 
 **Subtraction:**  
-![substraction](./resources/img/numbers/substraction.png)
+![substraction](https://github.com/aTan-aka-Xellos/java-algorithms/blob/master/src/main/resources/img/numbers/substraction.png)
 
 **Multiplication:**  
-![multiplication](./resources/img/numbers/multiplication.png)
+![multiplication](https://github.com/aTan-aka-Xellos/java-algorithms/blob/master/src/main/resources/img/numbers/multiplication.png)
 
 **Division:**  
-![division](./resources/img/numbers/division.png)  
+![division](https://github.com/aTan-aka-Xellos/java-algorithms/blob/master/src/main/resources/img/numbers/division.png)  
 
 #### Conversion to and from decimal numeral system  
 
 From binary to decimal:  
-![bin2dec](./resources/img/numbers/bin2dec.png)   
+![bin2dec](https://github.com/aTan-aka-Xellos/java-algorithms/blob/master/src/main/resources/img/numbers/bin2dec.png)   
 
 From decimal to binary:  
-![dec2bin](./resources/img/numbers/dec2bin.png) 
+![dec2bin](https://github.com/aTan-aka-Xellos/java-algorithms/blob/master/src/main/resources/img/numbers/dec2bin.png) 
 
 #### Representing negative values  
 
@@ -43,5 +43,4 @@ XOR ^
     >>>  
                             
   
-
 

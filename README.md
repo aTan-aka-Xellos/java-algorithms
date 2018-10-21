@@ -11,7 +11,7 @@ https://github.com/TheAlgorithms/Java
 
 * **Sorting**
 
-  * [Selection Sort](src/algorithms/sorting/SelectionSort.java)
+  * [Selection Sort](src/main/java/algorithms/sorting/SelectionSort.java)
   * [Insertion Sort] TODO
 
 * **Math**
