@@ -8,16 +8,16 @@ an increment resets it to 0 and causes an increment of the next digit to the lef
 
 
 #### Calculations
-**Addition:**  
+Addition:  
 ![addition](https://github.com/aTan-aka-Xellos/java-algorithms/blob/master/src/main/resources/img/numbers/addition.png)  
 
-**Subtraction:**  
+Subtraction:  
 ![substraction](https://github.com/aTan-aka-Xellos/java-algorithms/blob/master/src/main/resources/img/numbers/substraction.png)
 
-**Multiplication:**  
+Multiplication:  
 ![multiplication](https://github.com/aTan-aka-Xellos/java-algorithms/blob/master/src/main/resources/img/numbers/multiplication.png)
 
-**Division:**  
+Division:  
 ![division](https://github.com/aTan-aka-Xellos/java-algorithms/blob/master/src/main/resources/img/numbers/division.png)  
 
 #### Conversion to and from decimal numeral system  
