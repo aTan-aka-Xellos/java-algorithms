@@ -15,11 +15,11 @@ https://github.com/TheAlgorithms/Java
   * [Insertion Sort] TODO
 
 * **Math**
-  * [Bit Manipulation](BinaryCheatSheet.md)
-  * [Primality Test](src/algorithms/numbers/PrimesTrialDivision.java) - trial division method
-  * [Sieve Of Eratosthenes](src/algorithms/numbers/SieveOfEratosthenes.java) - sieve of Eratosthenes
-  * [Euclidean Algorithm](src/algorithms/numbers/EuclideanAlgorithm.java) - calculate the Greatest Common Divisor (GCD)
-  * [BinaryEuclideanAlgorithm](src/algorithms/numbers/BinaryEuclideanAlgorithm.java) - binary GCD algorithm / Stein's algorithm
+  * [Bit Manipulation](src/main/java/algorithms/numbers/bits/BinaryOperations.md)
+  * [Primality Test](src/main/java/algorithms/numbers/PrimesTrialDivision.java) - trial division method
+  * [Sieve Of Eratosthenes](src/main/java/algorithms/numbers/SieveOfEratosthenes.java) - sieve of Eratosthenes
+  * [Euclidean Algorithm](src/main/java/algorithms/numbers/EuclideanAlgorithm.java) - calculate the Greatest Common Divisor (GCD)
+  * [BinaryEuclideanAlgorithm](src/main/java/algorithms/numbers/BinaryEuclideanAlgorithm.java) - binary GCD algorithm / Stein's algorithm
 
 ## Data Structure
 
