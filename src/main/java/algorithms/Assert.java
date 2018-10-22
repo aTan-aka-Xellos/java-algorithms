@@ -1,13 +1,16 @@
 package algorithms;
 
-
-import algorithms.sorting.SortUtils;
-
 import java.util.Arrays;
 
 public class Assert {
 
     private Assert() {}
+
+    public static void assertEquals(String actual, String expected) {
+        if (!actual.equals(expected)) {
+            throw new AssertionError("\nActual:   " + actual + "\nExpected: " + expected);
+        }
+    }
 
     public static void assertEquals(int actual, int expected) {
         if (actual != expected) {
