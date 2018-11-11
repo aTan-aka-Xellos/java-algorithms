@@ -1,7 +1,6 @@
 package algorithms.sorting;
 
 import java.util.Arrays;
-import java.util.StringJoiner;
 
 /**
  * This class contains useful utility and short-cut methods to work with sorting.
@@ -26,6 +25,10 @@ public final class SortUtils {
         a[idy] = buffer;
     }
 
+    public static <T extends Comparable<? super T>> boolean less(T a, T b) {
+        return a.compareTo(b) < 0;
+    }
+
     /**
      * Print given array.
      * @param a array to print
@@ -33,22 +36,6 @@ public final class SortUtils {
      */
     public static <T> void print(T[] a) {
         System.out.println(Arrays.toString(a));
-    }
-
-    /**
-     * Method to create string of all array elements, separated by space.
-     * @param a given array
-     * @return string representation of the given array
-     *
-     */
-    public static <T> String toString(T[] a) {
-        StringJoiner joiner = new StringJoiner("\u0020");
-
-        Arrays.stream(a)
-            .map(Object::toString)
-            .forEach(joiner::add);
-
-        return joiner.toString();
     }
 
     /**
