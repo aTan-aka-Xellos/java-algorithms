@@ -2,11 +2,15 @@ package algorithms.numbers;
 
 import static algorithms.Assert.assertEquals;
 import static algorithms.Assert.assertTrue;
+import static java.util.Arrays.copyOf;
+import static java.util.Arrays.fill;
 
 import java.math.BigInteger;
-import java.util.Arrays;
 
 /**
+ * Sieve Of Eratosthenes implementation.
+ * Some optimisations weren't applied to simplify the code.
+ * 
  * https://en.wikipedia.org/wiki/Prime_number
  * https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes
  */
@@ -15,30 +19,30 @@ public class SieveOfEratosthenes {
     public static int[] getPrimes(int maxNumber) {
         if (maxNumber < 2) return new int[] {};
 
-        boolean[] sieved = new boolean[maxNumber + 1];
+        boolean[] isPrime = new boolean[maxNumber + 1];
+        fill(isPrime, 2, isPrime.length, true);
 
-        for (int i = 3; i * i <= maxNumber; i += 2) {
-            if (!sieved[i]) {
+        for (int i = 2; i * i <= maxNumber; i++) {
+            if (isPrime[i]) {
                 int limit = maxNumber / i;
-                for (int multiplier = i; multiplier <= limit; multiplier++) {
-                    sieved[i * multiplier] = true;
+                for (int factor = i; factor <= limit; factor++) {
+                    isPrime[i * factor] = false;
                 }
             }
         }
 
+        int count = 0;
         int[] primes = new int[countPrimesUpperBound(maxNumber)];
-        int count = 1;
-        primes[0] = 2;
 
-        for (int i = 3; i < sieved.length; i += 2) {
-            if (!sieved[i]) primes[count++] = i;
+        for (int i = 2; i < isPrime.length; i++) {
+            if (isPrime[i]) primes[count++] = i;
         }
 
-        return Arrays.copyOf(primes, count);
+        return copyOf(primes, count);
     }
 
     /**
-     * Calculate primes upper bound - http://mathworld.wolfram.com/PrimeCountingFunction.html
+     * Calculate approximate primes upper bound - http://mathworld.wolfram.com/PrimeCountingFunction.html
      * @param max number to search for primes
      * @return upper bound for primes
      */
