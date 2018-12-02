@@ -11,8 +11,10 @@ https://github.com/TheAlgorithms/Java
 
 * **Sorting**
 
-  * [Selection Sort](src/main/java/algorithms/sorting/SelectionSort.java)
-  * [Insertion Sort] TODO
+  * [Selection Sort](src/main/java/algorithms/sorting/Selection.java)
+  * [Insertion Sort](src/main/java/algorithms/sorting/Insertion.java)
+  * [Merge Sort](src/main/java/algorithms/sorting/Merge.java)
+  * [MergeBU Sort](src/main/java/algorithms/sorting/MergeBU.java)
 
 * **Math**
   * [Bit Manipulation](src/main/java/algorithms/numbers/bits/BinaryOperations.md)
