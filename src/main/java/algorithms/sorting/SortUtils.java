@@ -38,6 +38,10 @@ public final class SortUtils {
         System.out.println(Arrays.toString(a));
     }
 
+    public static void print(int[] a) {
+        System.out.println(Arrays.toString(a));
+    }
+
     /**
      * Short-cut method to copy array.
      * @param a the array to copy
@@ -52,11 +56,43 @@ public final class SortUtils {
      * Method for testing purpose - to create reference (expected) example of sorted array.
      * @param a the array to be sorted
      * @return sorted array
-     *
      */
     public static <T> T[] referenceSort(T[] a) {
         Arrays.sort(a);
         return a;
+    }
+
+    /**
+     * Method for testing purpose - to create reference (expected) example of sorted array.
+     * @param a the array to be sorted
+     * @return sorted array
+     */
+    public static int[] referenceSort(int[] a) {
+        Arrays.sort(a);
+        return a;
+    }
+
+    /**
+     * Check if array is fully sorted by asc order.
+     * @param a giver array to check if sorted.
+     * @return true, if array is sorted by asc, false - otherwise
+     */
+    public static boolean isSorted(int[] a) {
+        return isSorted(a, 0, a.length);
+    }
+
+    /**
+     * Check if sub-array (defined by given interval) is fully sorted by asc order.
+     * @param a giver array to check if sorted on given interval.
+     * @param lo first index of interval
+     * @param hi last  index of interval
+     * @return true, if array is sorted by asc, false - otherwise
+     */
+    public static boolean isSorted(int[] a, int lo, int hi) {
+        for (int i = lo + 1; i <= hi; i++) {
+            if (a[i] < a[i - 1]) return false;
+        }
+        return true;
     }
 
 }
