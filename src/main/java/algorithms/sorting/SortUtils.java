@@ -78,7 +78,7 @@ public final class SortUtils {
      * @return true, if array is sorted by asc, false - otherwise
      */
     public static boolean isSorted(int[] a) {
-        return isSorted(a, 0, a.length);
+        return isSorted(a, 0, a.length - 1);
     }
 
     /**

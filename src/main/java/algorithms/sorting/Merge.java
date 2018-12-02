@@ -1,7 +1,6 @@
 package algorithms.sorting;
 
 import static algorithms.Assert.assertEquals;
-
 import static algorithms.sorting.SortUtils.isSorted;
 import static algorithms.sorting.SortUtils.print;
 import static algorithms.sorting.SortUtils.referenceSort;
@@ -9,10 +8,10 @@ import static java.util.Arrays.copyOf;
 
 /**
  * Classic Merge sort algorithm with recursion.
- * Reference taken from:
+ * As reference used:
  * @see <a href="https://algs4.cs.princeton.edu/code/edu/princeton/cs/algs4/Merge.java.html>
  */
-public class MergeSort {
+public class Merge {
 
     public static void sort(int[] a) {
 
@@ -44,7 +43,6 @@ public class MergeSort {
 
         int i = lo, j = mid + 1;
         for (int k = lo; k <= hi; k++) {
-
                  if (i > mid)         a[k] = aux[j++];
             else if (j > hi)          a[k] = aux[i++];
             else if (aux[j] < aux[i]) a[k] = aux[j++];
@@ -55,14 +53,14 @@ public class MergeSort {
     }
 
     public static void main(String[] args) {
-        int[] array = {6, 5, 4, 3, 2, 1, 0};
+        int[] array = {2, 5, 5, 1, 6, 0, 4, 3};
         int[] copy  = copyOf(array, array.length);
 
         sort(array);
         print(array);
         assertEquals(array, referenceSort(copy));
 
-        array = new int[]{2, 5, 5, 1, 6, 0, 4, 3};
+        array = new int[]{6, 5, 4, 3, 2, 1, 0};
         copy  = copyOf(array, array.length);
 
         sort(array);
