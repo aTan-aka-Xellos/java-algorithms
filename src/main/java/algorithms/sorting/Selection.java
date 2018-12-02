@@ -6,7 +6,7 @@ import static algorithms.sorting.SortUtils.referenceSort;
 import static algorithms.sorting.SortUtils.swap;
 import static java.util.Arrays.copyOf;
 
-public class SelectionSort {
+public class Selection {
 
     public static void sort(int[] array) {
 

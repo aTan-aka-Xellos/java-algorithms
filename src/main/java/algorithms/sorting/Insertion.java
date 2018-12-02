@@ -4,7 +4,7 @@ import static algorithms.Assert.assertEquals;
 import static algorithms.sorting.SortUtils.*;
 import static java.util.Arrays.copyOf;
 
-public class InsertionSort {
+public class Insertion {
 
     public static void sort(int[] array) {
 
