@@ -91,6 +91,27 @@ Signed and unsigned right shifts have the same result for positive numbers.
 1100 >> 2 = 11 (3)
 ```    
 
+#### Exchange values without additional variable  
+
+[ReverseStringWithXOR](src/main/java/algorithms/numbers/bits/ReverseStringWithXOR.java)  
+Using *XOR* 2 variables can be exchanged without additional variable:  
+```
+int x = 5, y = 7; 
+
+x = x^y; // x == 2
+y = x^y; // y == 5
+x = x^y; // x == 7
+```  
+
+
+#### Pseudo-random numbers using XOR
+
+[XORShift](src/main/java/algorithms/numbers/bits/XORShift.java)  
+Using XOR it's possible to implement very simple method to generate pseudo-random numbers.  
+It produce "medium quality" random numbers, which usually has an acceptable degree of randomness.    
+ 
+
 #### Useful links:  
 [Bitwise and Bit Shift operations](https://www.vojtechruzicka.com/bit-manipulation-java-bitwise-bit-shift-operations)  
+[XORShift random number generators](https://www.javamex.com/tutorials/random_numbers/xorshift.shtml)  
 [Two's complement](https://en.wikipedia.org/wiki/Two%27s_complement)  
