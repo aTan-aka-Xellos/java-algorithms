@@ -93,7 +93,7 @@ Signed and unsigned right shifts have the same result for positive numbers.
 
 #### Exchange values without additional variable  
 
-[ReverseStringWithXOR](src/main/java/algorithms/numbers/bits/ReverseStringWithXOR.java)  
+[ReverseStringWithXOR](ReverseStringWithXOR.java)  
 Using *XOR* 2 variables can be exchanged without additional variable:  
 ```
 int x = 5, y = 7; 
@@ -106,7 +106,7 @@ x = x^y; // x == 7
 
 #### Pseudo-random numbers using XOR
 
-[XORShift](src/main/java/algorithms/numbers/bits/XORShift.java)  
+[XORShift](XORShift.java)  
 Using XOR it's possible to implement very simple method to generate pseudo-random numbers.  
 It produce "medium quality" random numbers, which usually has an acceptable degree of randomness.    
  
