@@ -88,12 +88,21 @@ it just shifts all the bits to the right and pads the result with zeros from the
 That means that for negative numbers, the result is always positive. 
 Signed and unsigned right shifts have the same result for positive numbers.  
 ```
-1100 >> 2 = 11 (3)
+1100 >>> 2 = 11 (3)
 ```    
+
+Usage example: [Bug with for overflows](https://ai.googleblog.com/2006/06/extra-extra-read-all-about-it-nearly.html)  
+```
+int low  = 2147482000;        // 1111111111111111111100110010000
+int high = 2147483000;        // 1111111111111111111110101111000                        
+int mid = (low + high) >>> 1; // 1111111111111111111101110000100  (2147482500)
+// without shift mid would be    11111111111111111111011100001000 (-2296)
+```
+
 
 #### Exchange values without additional variable  
 
-[ReverseStringWithXOR](ReverseStringWithXOR.java)  
+[ReverseStringWithXOR](ReverseStringWithXOR.java)   
 Using *XOR* 2 variables can be exchanged without additional variable:  
 ```
 int x = 5, y = 7; 
