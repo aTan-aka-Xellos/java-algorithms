@@ -5,28 +5,28 @@ package algorithms.graphs;
  */
 public class UnionFind {
 
-    int[] roots;
+    int[] root;
 
     // Init N nodes, each point to itself
     public UnionFind(int size) {
-        roots = new int[size];
-        for (int i = 0; i < roots.length; i++) {
-            roots[i] = i;
+        root = new int[size];
+        for (int i = 0; i < root.length; i++) {
+            root[i] = i;
         }
     }
 
     // With huge inputs iterative approach safer
-    int findRoot(int[] p, int node) {
-        if (p[node] == node) return node;
-        p[node] = findRoot(p, p[node]); // important step to flat the tree
-        return p[node];
+    int findRoot(int node) {
+        if (root[node] == node) return node;
+        root[node] = findRoot(root[node]); // important step to flat the tree
+        return root[node];
     }
 
     // Iterative approach
-    int findRootIter(int[] p, int node) {
-        while (p[node] != node) {
-            p[node] = p[p[node]];
-            node = p[node];
+    int findRootIter(int node) {
+        while (root[node] != node) {
+            root[node] = root[root[node]];
+            node = root[node];
         }
         return node;
     }
@@ -34,13 +34,13 @@ public class UnionFind {
     // UnionFind:
     // maintain size array and union smaller tree to a larger one (p.34)
     void union(int[] p, int a, int b) {
-        int parentA = findRoot(p, a);
-        int parentB = findRoot(p, b);
-        p[parentB] = parentA; // not weighted version!
+        int rootA = findRoot(a);
+        int rootB = findRoot(b);
+        p[rootB] = rootA; // not weighted version!
     }
 
     // just compare if nodes has the same root
-    boolean isConnected(int[] p, int a, int b) {
-        return findRoot(p, a) == findRoot(p, b);
+    boolean isConnected(int a, int b) {
+        return findRoot(a) == findRoot(b);
     }
 }
